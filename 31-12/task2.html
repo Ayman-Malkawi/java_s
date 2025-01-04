@@ -31,7 +31,9 @@
             <option value="10" selected>10</option>
             <option value="20">20</option>
             <option value="25">25</option>
-            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+            <option value="60">60</option>
         </select>
 
         <input type="checkbox" id="italic" onchange="text()">
@@ -52,16 +54,16 @@
 
     <script>
         function text() {
-            const text = document.getElementById('div1');
+            const text1 = document.getElementById('div1');
 
-            text.style.fontFamily = document.getElementById('font').value;
-            text.style.fontSize = document.getElementById('size').value + 'px';
+            text1.style.fontFamily = document.getElementById('font').value;
+            text1.style.fontSize = document.getElementById('size').value + 'px';
 
-            text.style.fontStyle = document.getElementById('italic').checked ? 'italic' : 'normal';
-            text.style.fontWeight = document.getElementById('bold').checked ? 'bold' : 'normal';
-            text.style.textDecoration = document.getElementById('underline').checked ? 'underline' : 'none';
+            text1.style.fontStyle = document.getElementById('italic').checked ? 'italic' : 'normal';
+            text1.style.fontWeight = document.getElementById('bold').checked ? 'bold' : 'normal';
+            text1.style.textDecoration = document.getElementById('underline').checked ? 'underline' : 'none';
         }
-        text();
+      
     </script>
     
 </body>
