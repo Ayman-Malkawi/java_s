@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    .one {
+        background-color: red;
+        margin: 0px;
+        height: 50px;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    h3 {
+        margin-left: 5%;
+    }
+    .toggle {
+        margin-left: 90%;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    #ull {
+        margin-left: 50%;
+        list-style-type: none;
+        display: none; 
+    }
+    /* .anything {
+        display: block; 
+    } */
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+ 
+<div class="one">
+    <h3>Logo</h3>
+    <div class="icon">
+      <span class="toggle" onclick="show()">☰</span>
+    </div>
+    <div style="background-color: red;">
+      <ul id="ull">
+        <li>Home</li>
+        <li>Articles</li>
+        <li>Services</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+
+<script>
+    function show() {
+    let menu = document.getElementById('ull');
+    if ( menu.style.display=="block") { menu.style.display="none"
+        
+    }else{menu.style.display="block"}
+}
+
+
+
+
+ 
+
+
+
+</script>
+
+</body>
+</html>

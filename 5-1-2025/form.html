@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="ar">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Example</title>
+    </head>
+    <body>
+        <form id="myForm">
+            <label for="usernaem">Name:</label>
+            <input type="text" id="usernaem">
+            <br><br>
+    
+            <label for="age">Age:</label>
+            <input type="text" id="age">
+            <br><br>
+    
+            <label for="gender">Gender:</label>
+            <input type="text" id="gender">
+            <br><br>
+    
+            <label for="birth">BirthDate:</label>
+            <input type="date" id="birth">
+            <br><br>
+    
+            <label for="image">Upload Your Image:</label>
+            <input type="file" id="image">
+            <hr>
+    
+            <label for="desc">Description:</label>
+            <input type="text" id="desc">
+            <br><br>
+    
+            <label for="major">Major & University:</label>
+            <input type="text" id="major">
+            <br><br>
+    
+            <label for="prog">Programming Language:</label>
+            <input type="checkbox" id="prog">
+            <label for="html">HTML</label>
+            <input type="checkbox" id="html">
+            <label for="css">CSS</label>
+            <input type="checkbox" id="css">
+            <label for="js">JS</label>
+            <input type="checkbox" id="js">
+            <hr>
+    
+            <label for="numbers">Siblings Number:</label>
+            <input type="text" id="numbers">
+            <br><br>
+    
+            <label for="sibl">Description of Siblings:</label>
+            <input type="text" id="sibl">
+            <br><br>
+    
+            <input type="submit"  id="send" value="Submit">
+        </form>
+        <br>
+<input type="submit" onclick="saveToLocal()" value="send to local">   
+        <div id="last"></div>
+    
+        <script>
+            document.getElementById("myForm").addEventListener("submit", function(event) {
+                event.preventDefault(); 
+                let username = document.getElementById("usernaem").value;
+                let age = document.getElementById("age").value;
+                let Gender = document.getElementById("gender").value;
+                let BirthDate = document.getElementById("birth").value;
+                let Image = document.getElementById("image").value;
+                let Description = document.getElementById("desc").value;
+                let Majorand = document.getElementById("major").value;
+    
+                let Programming = document.getElementById("prog").checked ? "Yes" : "No";
+                let HTML = document.getElementById("html").checked ? "Yes" : "No";
+                let CSS = document.getElementById("css").checked ? "Yes" : "No";
+                let JS = document.getElementById("js").checked ? "Yes" : "No";
+    
+                let Siblings = document.getElementById("numbers").value;
+                let ofSibling = document.getElementById("sibl").value;
+    
+                document.getElementById("last").innerHTML = 
+                    "Name: " + username + "<br>" +
+                    "Age: " + age + "<br>" +
+                    "Gender: " + Gender + "<br>" +
+                    "BirthDate: " + BirthDate + "<br>" +
+                    "Image: " + Image + "<br>" +
+                    "Description: " + Description + "<br>" +
+                    "Major & University: " + Majorand + "<br>" +
+                    "Programming Language (Prog): " + Programming + "<br>" +
+                    "HTML: " + HTML + "<br>" +
+                    "CSS: " + CSS + "<br>" +
+                    "JS: " + JS + "<br>" +
+                    "Siblings Number: " + Siblings + "<br>" +
+                    "Description of Siblings: " + ofSibling;
+            });
+
+
+
+
+
+
+
+            function saveToLocal() {
+        localStorage.setItem("Name: ", document.getElementById("usernaem").value);
+        localStorage.setItem("Age: ", document.getElementById("age").value);
+        localStorage.setItem(
+          "Gender: ",
+          document.getElementById("gender").value
+        );
+        localStorage.setItem("Birth Of Date: ",document.getElementById("birth").value
+        );
+        localStorage.setItem("Image: ", document.getElementById("image").value);
+        localStorage.setItem(
+          "Desciption: ",
+          document.getElementById("desc").value
+        );
+        localStorage.setItem(
+          "University: ",
+          document.getElementById("major").value
+        );
+        localStorage.setItem(
+          "Programming Language: ",
+          document.getElementById("prog").value
+        );
+        localStorage.setItem(
+          "HTML: ",
+          document.getElementById("html").value
+        );
+
+
+        localStorage.setItem(
+          "Programming Language: ",
+          document.getElementById("css").value
+        );
+        localStorage.setItem(
+          "Programming Language: ",
+          document.getElementById("js").value
+        );
+        localStorage.setItem(
+          "Sibling Numbers: ",
+          document.getElementById("numbers").value
+        );
+        localStorage.setItem(
+          "Description Of Siblings: ",
+          document.getElementById("des.Siblings").value
+        );
+      }
+        </script>
+    </body>
+    </html>
+    
+
+</body>
+</html>
