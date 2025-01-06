@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+i{  position: fixed;  
+right: -10%;
+bottom: 5%;
+transition: 0.3s;
+
+}
+
+body{ height: 3000px;}
+.show{
+
+right: 10%;
+
+ }
+ 
+
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="all.min.css">
+</head>
+<body>
+    <div>
+        <i class="fa-solid fa-circle-up fa-3x" onclick="clicks()"></i>
+    </div>
+
+
+
+
+
+
+    <script>
+
+let scrolls=document.querySelector("i")
+window.addEventListener("scroll",function(){
+if (window.scrollY>500) { scrolls.classList.add("show")
+} else{scrolls.classList.remove("show") }
+
+
+})
+  
+function clicks (){window.scrollTo({top:0,behavior:"smooth"})
+
+
+
+}
+
+
+    </script>
+
+</body>
+
+
+
+</html>

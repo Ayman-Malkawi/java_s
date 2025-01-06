@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+ 
+<div>
+    <select name="" id="newflag" onchange="showflag()">
+        <option value="Jordan">Jordan</option>
+        <option value="palestine">Palestine</option>
+    </select>
+
+    
+</div>
+<img id="flag" src="" alt="" style="width: 200px; height: 150px;">
+<script>
+function showflag (){
+    let addflag =document.getElementById("flag")
+    let flog= document.getElementById ("newflag").value
+if (flog==="Jordan") { addflag.src="https://images.emojiterra.com/google/android-11/512px/1f1ef-1f1f4.png"
+    
+}else if (flog==="palestine"){ addflag.src="https://images.emojiterra.com/twitter/v13.0/512px/1f1f5-1f1f8.png"
+
+
+}
+
+else {
+    addflag.src="";
+}
+
+
+
+    
+}
+</script>
+
+
+
+</script>
+</html>
