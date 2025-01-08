@@ -23,45 +23,52 @@ div{
 
 
 
-
-
-
     <script>
+var butt=document.getElementById("loadButton")
+butt.addEventListener("click",function(){
+    fetch("https:api.npoint.io/f8b0512f9847b686ded7")
+    // fetch("cards.json")
+    .then(function(response){
+return response.json()
+
+    }).then(function(data){ 
+
+        for (let i=0 ; i<5;i++){
+let users = data[i]
+
+let cards = document.createElement("div");
+cards.innerHTML=`
+
+<h2> Name : ${users.name} </h2>
+
+<p><b> Age : ${users.age} </p>
+
+<p><b> Email : ${users.email} </p>
+
+<p> <b> profession : ${users.profession} </p>
+
+`
+let container=document.getElementById("cardContainer")
+
+container.appendChild (cards)
 
 
 
-var loadButton = document.getElementById('loadButton');
+        }
+    }
 
-loadButton.addEventListener('click', function() {
-    // fetch('cards.json')
-    fetch('https://api.npoint.io/ac3d8a2b463fb50b0af5')
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            var cardContainer = document.getElementById('cardContainer');
-            cardContainer.style.display = 'flex';
+)  
 
-            cardContainer.innerHTML = '';
 
-            for (var i = 0; i < data.length; i++) {
-                var user = data[i];
+    
 
-                var card = document.createElement('div');
-                card.className = 'card';
+})
 
-                card.innerHTML = '<h2>' + user.name + '</h2>' +
-         '<p><strong>Age:</strong> ' + user.age + '</p>' +
-            '<p><strong>Email:</strong> ' + user.email + '</p>' +
-                                 '<p><strong>Profession:</strong> ' + user.profession + '</p>';
 
-                cardContainer.appendChild(card);
-            }
-        })
-        .catch(function(error) {
-            console.error('Error fetching data:', error);
-        });
-});
-    </script>
+
+
+
+</script>
+
 </body>
 </html>
