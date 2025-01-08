@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+div{
+    border: solid 1px black;
+    padding: 4%;
+}
+       
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>User Cards</h1>
+    <button id="loadButton">Load Cards</button>
+    <div id="cardContainer"></div>
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+
+var loadButton = document.getElementById('loadButton');
+
+loadButton.addEventListener('click', function() {
+    // fetch('cards.json')
+    fetch('https://api.npoint.io/ac3d8a2b463fb50b0af5')
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            var cardContainer = document.getElementById('cardContainer');
+            cardContainer.style.display = 'flex';
+
+            cardContainer.innerHTML = '';
+
+            for (var i = 0; i < data.length; i++) {
+                var user = data[i];
+
+                var card = document.createElement('div');
+                card.className = 'card';
+
+                card.innerHTML = '<h2>' + user.name + '</h2>' +
+         '<p><strong>Age:</strong> ' + user.age + '</p>' +
+            '<p><strong>Email:</strong> ' + user.email + '</p>' +
+                                 '<p><strong>Profession:</strong> ' + user.profession + '</p>';
+
+                cardContainer.appendChild(card);
+            }
+        })
+        .catch(function(error) {
+            console.error('Error fetching data:', error);
+        });
+});
+    </script>
+</body>
+</html>
